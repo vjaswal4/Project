@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" paraller="none" thread-count=0>
+<suite name="Suite" paraller="none">
 
 	<listeners>
 
@@ -16,7 +16,7 @@
 		<classes>
 			<class name="Accademy.ValidateNavigationBar" />
 		</classes>
-	</test> <!-- Test -->
+	</test> 
 
 	<test name="Test Validate Title">
 		<classes>
@@ -37,4 +37,16 @@
 			<class name="Accademy.AppTest" />
 		</classes>
 	</test>
+	
+	
+	
+	<!--  <test name="Test Validate Navigation Bar">
+	<classes>
+			<class name="Accademy.ValidateNavigationBar" />
+			<class name="Accademy.ValidateTitle" />
+			<class name="Accademy.HomePage" />
+			<class name="Accademy.AppTest" />
+		</classes>
+	</test> -->
+	
 </suite> <!-- Suite -->
