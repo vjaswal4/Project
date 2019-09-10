@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+	<Properties>
+		<Property name="basepath">./logs</Property>
+	</Properties>
+
+	<!-- Appenders tag defines where to log? 1) for console we use <Console> 
+		tag and 2) 2) for file we use <File> , <RollingFile> tags -->
+
+	<!-- how to log i.e formating is defined inside <PatternLayout> tag -->
+	<Appenders>
+
+		<RollingFile name="File" fileName="${basePath}/prints.log"
+			filePattern="${basePath}prints.%1.log.gz" ignoreExceptions="false">
+			
+
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+
+			<SizeBasedTriggeringPolicy size="500" />
+
+		</RollingFile>
+
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+
+	</Appenders>
+
+
+	<!-- What to log is defined inside <Loggers> tag.... -->
+	<Loggers>
+		<Root level="trace">
+			<AppenderRef ref="File" />
+		</Root>
+	</Loggers>
+</Configuration>
